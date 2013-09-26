@@ -20,12 +20,12 @@ module PSWinCom
         API.api_host = 'http://server.com:8081/'
         HttpSender.new.send(XmlMock.new(""))
         Net::HTTP.host.should == "server.com"
-        Net::HTTP.port.should == 8081      
+        Net::HTTP.port.should == 8081
       end
       it "sends XML with correct content type" do
         post = HttpSender.new.send(XmlMock.new("<xml>foo</xml>"))
         post.body.should == "<xml>foo</xml>"
-        post.content_type.should == 'text/xml'
+        post.content_type.should == 'text/xml charset=ISO-8859-1'
       end
     end
   end
