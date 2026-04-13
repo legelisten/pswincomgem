@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency('builder', '>= 2.1.2')
 
-  s.default_executable = "sms"
   s.executables     = ["sms"]
 
   s.files           = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md)
